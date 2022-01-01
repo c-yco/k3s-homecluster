@@ -1,0 +1,15 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: adguard-home
+  namespace: networking
+spec:
+  chart:
+    spec:
+      chart: adguard-home
+      sourceRef:
+        kind: HelmRepository
+        name: adguard-home
+  interval: 1m0s
+
