@@ -11,5 +11,6 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: adguard-home
+        namespace: flux-system
   interval: 1m0s
 
