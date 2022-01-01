@@ -101,7 +101,7 @@ resource "cloudflare_record" "root" {
 }
 
 resource "cloudflare_record" "hajimari" {
-  name    = "hajimari"
+  name    = "hajimari.home"
   zone_id = lookup(data.cloudflare_zones.domain.zones[0], "id")
   value   = "home.${data.sops_file.cloudflare_secrets.data["cloudflare_domain"]}"
   proxied = true
