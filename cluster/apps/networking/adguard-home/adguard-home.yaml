@@ -10,7 +10,7 @@ spec:
       chart: adguard-home
       sourceRef:
         kind: HelmRepository
-        name: adguard-home
+        name: k8s-at-home-charts
         namespace: flux-system
   interval: 1m0s
 
