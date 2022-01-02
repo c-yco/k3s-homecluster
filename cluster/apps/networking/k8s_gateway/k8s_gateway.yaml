@@ -1,0 +1,17 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: k8s_gateway
+  namespace: networking
+spec:
+  chart:
+    spec:
+      chart: k8s_gateway
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-gateway-charts
+        namespace: flux-system
+  interval: 1m0s
+  values: 
+    domain: home.die-rabensteins.de
