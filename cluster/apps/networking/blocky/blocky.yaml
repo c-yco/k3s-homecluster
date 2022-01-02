@@ -21,11 +21,11 @@ spec:
     # image:
     #   repository: ghcr.io/0xerr0r/blocky
     #   tag: v0.17
-    # controller:
-    #   enabled: true
-    #   type: deployment
-    #   strategy: RollingUpdate
-    #   replicas: 1
+    controller:
+      enabled: true
+      type: deployment
+      strategy: RollingUpdate
+      replicas: 2
     env:
       TZ: "Europe/Berlin"
     service:
