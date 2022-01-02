@@ -13,5 +13,10 @@ spec:
         name: k8s-gateway-charts
         namespace: flux-system
   interval: 1m0s
+
+#https://github.com/ori-edge/k8s_gateway/tree/master/charts/k8s-gateway
   values: 
     domain: home.die-rabensteins.de
+    service:
+      type: LoadBalancer
+      loadBalancerIP: "${SVC_K8_GATEWAY_ADDR}"
