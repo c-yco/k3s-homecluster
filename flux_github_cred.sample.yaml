@@ -1,0 +1,24 @@
+## Example credentials for write acces of flux to github.com
+# see [https://fluxcd.io/docs/components/source/gitrepositories/#https-authentication]
+## !!! DONT COMMIT THIS FILE in your repo!!!, credentials are unencrypted
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: GitRepository
+metadata:
+  name: podinfo
+  namespace: default
+spec:
+  interval: 1m
+  url: https://github.com/stefanprodan/podinfo
+  secretRef:
+    name: https-credentials
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: https-credentials
+  namespace: default
+type: Opaque
+data:
+  username: <BASE64>
+  password: <BASE64>
