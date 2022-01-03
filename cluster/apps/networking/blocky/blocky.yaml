@@ -63,7 +63,9 @@ spec:
           - tcp+udp:192.168.1.1
       conditional:
         mapping:
+          fritz.box: 192.168.1.1
           ${SECRET_LOCAL_DOMAIN}: tcp+udp:${SVC_K8_GATEWAY_ADDR}
+        
       blocking:
         blackLists:
           ads:
