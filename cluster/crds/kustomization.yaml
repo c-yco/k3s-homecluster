@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
   - cert-manager
   - traefik
-  # - rook-ceph
+  - rook-ceph
