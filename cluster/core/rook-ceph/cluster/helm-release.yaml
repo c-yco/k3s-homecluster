@@ -48,6 +48,7 @@ spec:
         disable: false
       mon:
         count: 3
+        allowMultiplePerNode: true
       mgr:
         count: 1
       dashboard:
