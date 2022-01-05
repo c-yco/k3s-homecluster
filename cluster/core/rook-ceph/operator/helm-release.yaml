@@ -39,4 +39,4 @@ spec:
                   - key: storage-node
                     operator: In
                     values:
-                      -"true"
+                      - "true"
