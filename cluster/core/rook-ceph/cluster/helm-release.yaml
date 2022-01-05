@@ -56,20 +56,20 @@ spec:
         ssl: false
 
       storage:
-        useAllNodes: false
+        useAllNodes: true
         useAllDevices: true
         config:
           osdsPerDevice: "1"
-        nodes:
-          # - name: "k3s-pi-1"
-          #   devices:
-          #     - name: "sda"
-          - name: "k3s-pi-2"
-            # devices:
-            #   - name: "sda3"
-          - name: "k3s-pi-3"
-            # devices:
-            #   - name: "sda3"
+        # nodes:
+        #   # - name: "k3s-pi-1"
+        #   #   devices:
+        #   #     - name: "sda"
+        #   - name: "k3s-pi-2"
+        #     # devices:
+        #     #   - name: "sda3"
+        #   - name: "k3s-pi-3"
+        #     # devices:
+        #     #   - name: "sda3"
     cephBlockPools:
       - name: ceph-blockpool
         spec:
