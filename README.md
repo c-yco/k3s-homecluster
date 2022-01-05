@@ -272,8 +272,17 @@ kubectl --kubeconfig=./provision/kubeconfig get pods -n flux-system
 # notification-controller-7c46575844-k4bvr   1/1     Running   0          1h
 # source-controller-7d6875bcb4-zqw9f         1/1     Running   0          1h
 ```
-
+9. Add Secret for flux write access to you git repository
+```` sh
+kc apply -f flux_github_cred.yaml 
+````
 :tada: **Congratulations** you have a Kubernetes cluster managed by Flux, your Git repository is driving the state of your cluster.
+
+:pin: For easier usage copy the kubeconfig into your profile folder
+```` sh
+cp provision/kubeconfig ~/.kube/config
+cp ./provision/kubeconfig /mnt/c/Users/alexa/.kube/config
+````
 
 ### :cloud:&nbsp; Configure Cloudflare DNS with Terraform
 
