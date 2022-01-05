@@ -110,7 +110,6 @@ spec:
             name: blocky-whitelist
     podAnnotations:
       configmap.reloader.stakater.com/reload: "blocky-config"
- 
     resources:
       requests:
         memory: 100Mi
