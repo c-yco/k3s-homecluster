@@ -22,16 +22,16 @@ spec:
       enabled: false
     ingress:
       dashboard:
+
         ingressClassName: "traefik"
         annotations:
           cert-manager.io/cluster-issuer: "letsencrypt-production"
           hajimari.io/enable: "true"
           hajimari.io/icon: "nas"
           traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
-        hosts:  
-          host:
-            name: "rook.${SECRET_LOCAL_DOMAIN}"
-            path: "/"
+        host:
+          name: "rook.${SECRET_LOCAL_DOMAIN}"
+          path: "/"
         tls:
           - hosts:
               - "rook.${SECRET_LOCAL_DOMAIN}"
