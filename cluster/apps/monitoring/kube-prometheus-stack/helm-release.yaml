@@ -84,7 +84,7 @@ spec:
         tls:
           - hosts:
               - "alert-manager.${SECRET_LOCAL_DOMAIN}"
-            secret: "alert-manager-tls"
+            secretName: "alert-manager-tls"
       alertmanagerSpec:
         storage:
           volumeClaimTemplate:
@@ -188,7 +188,7 @@ spec:
         tls:
           - hosts:
               - "prometheus.${SECRET_LOCAL_DOMAIN}"
-            secret: "prometheus-tls"
+            secretName: "prometheus-tls"
 
       # thanosService:
       #   enabled: true
