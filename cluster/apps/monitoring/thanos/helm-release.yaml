@@ -30,7 +30,7 @@ spec:
       ingress:
         enabled: true
         hostname: "thanos.${SECRET_LOCAL_DOMAIN}"
-        ingressClassName: "nginx"
+        ingressClassName: "traefik"
         tls: true
     existingObjstoreSecret: thanos-objstore
     queryFrontend:
