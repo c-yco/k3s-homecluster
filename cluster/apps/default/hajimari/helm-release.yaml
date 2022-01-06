@@ -23,11 +23,11 @@ spec:
     hajimari:
       defaultEnable: false
       namespaceSelector:
-        matchNames:
-          - default
-          - networking
-          - rook-ceph
-          - monitoring
+        # matchNames:
+        #   - default
+        #   - networking
+        #   - rook-ceph
+        #   - monitoring
       name: "Alexander"
       customApps:
         - name: Fritz Box
