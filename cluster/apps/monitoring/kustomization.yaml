@@ -10,7 +10,7 @@ resources:
   # - pushgateway
   #- snmp-exporter
   - speedtest-exporter
-  - thanos
+  #- thanos
   #- unifi-poller
   #- uptimerobot-heartbeat
   #- vector-agent
