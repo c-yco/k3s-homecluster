@@ -9,7 +9,7 @@ resources:
   - loki
   # - pushgateway
   #- snmp-exporter
-  - speedtest-exporter
+  #- speedtest-exporter
   #- thanos
   #- unifi-poller
   #- uptimerobot-heartbeat
