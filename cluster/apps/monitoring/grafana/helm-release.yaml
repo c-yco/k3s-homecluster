@@ -133,11 +133,16 @@ spec:
     ingress:
       enabled: true
       ingressClassName: "traefik"
+      annotations:
+        kubernetes.io/ingress.class: "traefik"
+        cert-manager.io/cluster-issuer: "letsencrypt-production"
+        traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
       hosts:
         - "grafana.${SECRET_LOCAL_DOMAIN}"
       tls:
         - hosts:
             - "grafana.${SECRET_LOCAL_DOMAIN}"
+          secret: "grafana-tls"
     serviceAccount:
       create: true
       autoMount: true
