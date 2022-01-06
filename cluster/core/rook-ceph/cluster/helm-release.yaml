@@ -22,8 +22,7 @@ spec:
       enabled: false
     ingress:
       dashboard:
-
-        ingressClassName: "traefik"
+        # ingressClassName: "traefik"
         annotations:
           cert-manager.io/cluster-issuer: "letsencrypt-production"
           hajimari.io/enable: "true"
@@ -35,6 +34,7 @@ spec:
         tls:
           - hosts:
               - "rook.${SECRET_LOCAL_DOMAIN}"
+            secretName: "rook-tls"
     cephClusterSpec:
       placement:
         mon:
