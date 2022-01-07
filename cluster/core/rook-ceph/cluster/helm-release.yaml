@@ -97,6 +97,8 @@ spec:
     cephFileSystems: []
     cephObjectStores: 
       - name: ThanosS3
+        storageClass: 
+          enabled: true
         spec: 
           metadataPool:
             failureDomain: host
