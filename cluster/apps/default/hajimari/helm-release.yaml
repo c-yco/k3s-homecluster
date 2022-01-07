@@ -23,7 +23,7 @@ spec:
     hajimari:
       defaultEnable: true
       namespaceSelector:
-        defaultEnable: true
+        any: true
         # matchNames:
         #   - default
         #   - networking
