@@ -95,9 +95,9 @@ spec:
             csi.storage.k8s.io/node-stage-secret-namespace: rook-ceph
             csi.storage.k8s.io/fstype: ext4
     cephFileSystems: []
-    cephObjectStores: 
+    cephObjectStores:
       - name: ceph-objectStore
-        spec: 
+        spec:
           metadataPool:
             failureDomain: host
             replicated:
@@ -114,5 +114,5 @@ spec:
             port: 80
               # securePort: 443
             instances: 1
-        storageClass: 
+        storageClass:
           enabled: true
