@@ -97,8 +97,7 @@ spec:
     cephFileSystems: []
     cephObjectStores: 
       - name: ThanosS3
-        storageClass: 
-          enabled: true
+        
         spec: 
           metadataPool:
             failureDomain: host
@@ -116,3 +115,5 @@ spec:
             port: 80
               # securePort: 443
             instances: 1
+        storageClass: 
+          enabled: true
