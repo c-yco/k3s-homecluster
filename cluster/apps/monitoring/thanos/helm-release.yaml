@@ -32,7 +32,7 @@ spec:
         hostname: "thanos.${SECRET_LOCAL_DOMAIN}"
         ingressClassName: "traefik"
         tls: true
-    existingObjstoresecretName: thanos-objstore
+    existingObjstoresecretName: thanos-bucket
     queryFrontend:
       enabled: false
     bucketweb:
