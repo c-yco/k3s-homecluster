@@ -1,11 +1,12 @@
+---
 apiVersion: objectbucket.io/v1alpha1
 kind: ObjectBucketClaim
 metadata:
-  name: ceph-bucket
-  #namespace: rook-ceph 
+  name: thanos-ceph-bucket
+  namespace: monitoring
 spec:
   
-  generateBucketName: thanos-bucket
+  generateBucketName: thanos
   storageClassName: rook-ceph-bucket
   # additionalConfig: [5]
   #   maxObjects: "1000"
