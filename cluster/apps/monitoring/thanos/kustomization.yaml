@@ -5,3 +5,5 @@ resources:
   - dashboard
   - secret.sops.yaml
   - helm-release.yaml
+  - object-bucket-claim.yaml
+  
