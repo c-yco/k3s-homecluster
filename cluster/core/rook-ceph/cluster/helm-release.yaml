@@ -123,7 +123,8 @@ spec:
               size: 2
           dataPool:
             failureDomain: host
-            replicated: 2
+            replicated: 
+              size: 2
             # erasureCoded:
             #   dataChunks: 2
             #   codingChunks: 1
