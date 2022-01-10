@@ -20,7 +20,7 @@ spec:
     image:
       registry: quay.io
       repository: thanos/thanos
-      tag: v0.24.0
+      tag: main-2021-12-22-53ec210d
     query:
       enabled: true
       replicaLabels:
