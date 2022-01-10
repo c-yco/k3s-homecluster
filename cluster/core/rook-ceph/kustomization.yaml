@@ -6,3 +6,5 @@ resources:
   - operator
   #- rook-direct-mount
   - toolbox.yaml
+  - storageclass-objectstore
+  - thanos-object-bucket-claim.yaml

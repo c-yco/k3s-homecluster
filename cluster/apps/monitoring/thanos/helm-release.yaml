@@ -18,8 +18,8 @@ spec:
       interval: 5m
   values:
     image:
-      registry: public.ecr.aws
-      repository: bitnami/thanos
+      registry: quay.io/
+      repository: thanos/thanos
     query:
       enabled: true
       replicaLabels:

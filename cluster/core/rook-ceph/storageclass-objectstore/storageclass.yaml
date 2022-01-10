@@ -7,6 +7,6 @@ metadata:
 provisioner: rook-ceph.ceph.rook.io/bucket
 reclaimPolicy: Delete
 parameters:
-   objectStoreName: thanos-s3
+   objectStoreName: ceph-objectstore
    objectStoreNamespace: rook-ceph
    region: eu-central-1
