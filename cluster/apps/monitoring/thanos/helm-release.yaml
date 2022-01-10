@@ -18,7 +18,7 @@ spec:
       interval: 5m
   values:
     image:
-      registry: quay.io/
+      registry: quay.io
       repository: thanos/thanos
     query:
       enabled: true
