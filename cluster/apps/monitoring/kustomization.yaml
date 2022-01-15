@@ -6,7 +6,7 @@ resources:
   #- botkube
   - grafana
   - kube-prometheus-stack
-  - loki
+  #- loki
   # - pushgateway
   #- snmp-exporter
   #- speedtest-exporter
