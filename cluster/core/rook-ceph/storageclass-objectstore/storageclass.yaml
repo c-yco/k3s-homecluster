@@ -9,4 +9,4 @@ reclaimPolicy: Delete
 parameters:
    objectStoreName: ceph-objectstore
    objectStoreNamespace: rook-ceph
-   region: eu-central-1
+   #region: eu-central-1
