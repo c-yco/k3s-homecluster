@@ -42,7 +42,7 @@ spec:
             - "thanos-query.${SECRET_LOCAL_DOMAIN}"
             secretName: "thanos-query-tls"
         ingressClassName: "traefik"
-        tls: true
+       
     existingObjstoresecretName: thanos-bucket
     objstoreConfig:
       type: s3
