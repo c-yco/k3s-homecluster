@@ -44,7 +44,7 @@ spec:
           - hosts:
             - "thanos.${SECRET_LOCAL_DOMAIN}"
             secretName: "thanos-tls"
-        ingressClassName: "traefik"
+        
 
     existingObjstoresecretName: thanos-bucket
     objstoreConfig:
