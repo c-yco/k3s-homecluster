@@ -5,7 +5,7 @@ resources:
   #- blackbox-exporter
   #- botkube
   #- grafana
-  #- kube-prometheus-stack
+  - kube-prometheus-stack
   #- loki
   # - pushgateway
   #- snmp-exporter
