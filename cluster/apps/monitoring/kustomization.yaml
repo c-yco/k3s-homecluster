@@ -4,7 +4,7 @@ kind: Kustomization
 resources:
   #- blackbox-exporter
   #- botkube
-  #- grafana
+  - grafana
   - kube-prometheus-stack
   #- loki
   # - pushgateway
