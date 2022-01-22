@@ -36,15 +36,12 @@ spec:
         hostname: "thanos.${SECRET_LOCAL_DOMAIN}"
         ingressClassName: "traefik"
         annotations:
-          #kubernetes.io/ingress.class: "traefik"
+          
           cert-manager.io/cluster-issuer: "letsencrypt-production"
           traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
-        # hosts:
-        #   - "thanos.${SECRET_LOCAL_DOMAIN}"
+        
         tls: true
-          # - hosts:
-          #     - "thanos.${SECRET_LOCAL_DOMAIN}"
-       # secrets: "thanos-tls"
+
         
 
     existingObjstoresecretName: thanos-bucket
