@@ -85,10 +85,6 @@ spec:
           revision: 4
           datasource: Prometheus
         # Ref: https://grafana.com/grafana/dashboards/13502
-        minio:
-          gnetId: 13502
-          revision: 10
-          datasource: Prometheus
         # Ref: https://grafana.com/grafana/dashboards/11315
         unifi-client-insights:
           gnetId: 11315
@@ -132,7 +128,7 @@ spec:
       enabled: true
     ingress:
       enabled: true
-      ingressClassName: "traefik"
+      
       annotations:
         kubernetes.io/ingress.class: "traefik"
         cert-manager.io/cluster-issuer: "letsencrypt-production"
