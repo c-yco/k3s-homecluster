@@ -129,8 +129,8 @@ spec:
       enabled: true
       endpoints:
         - 192.168.1.2
-        - 192.168.1.3
-        - 192.168.42.12
+        #- 192.168.1.3
+        #- 192.168.42.12
       service:
         enabled: true
         port: 10257
@@ -190,10 +190,10 @@ spec:
               - "prometheus.${SECRET_LOCAL_DOMAIN}"
             secretName: "prometheus-tls"
 
-      # thanosService:
-      #   enabled: true
-      # thanosServiceMonitor:
-      #   enabled: true
+      thanosService:
+        enabled: true
+      thanosServiceMonitor:
+        enabled: true
       prometheusSpec:
         replicas: 1
         replicaExternalLabelName: "replica"
@@ -211,12 +211,12 @@ spec:
               resources:
                 requests:
                   storage: 10Gi
-        # thanos:
-        #   image: quay.io/thanos/thanos:v0.24.0
-        #   version: v0.22.0
-        #   objectStorageConfig:
-        #     name: thanos-objstore
-        #     key: objstore.yml
+        thanos:
+          image: quay.io/thanos/thanos:v0.24.0
+          version: v0.22.0
+          objectStorageConfig:
+            name: thanos-objstore
+            key: objstore.yml
         additionalScrapeConfigs:
           # - job_name: cadvisor
           #   honor_timestamps: true
