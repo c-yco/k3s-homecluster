@@ -28,7 +28,7 @@
       - smartmontools
       - software-properties-common
       - unattended-upgrades
-      - linux-modules-extra-raspi
+     
     install_recommends: false
     update_cache: true
     cache_valid_time: 3600
