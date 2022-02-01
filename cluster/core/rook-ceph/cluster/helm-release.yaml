@@ -59,7 +59,7 @@ spec:
 
       storage:
         useAllNodes: false
-        useAllDevices: false
+        useAllDevices: true
         config:
           osdsPerDevice: "1"
         nodes:

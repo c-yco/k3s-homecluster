@@ -194,7 +194,14 @@ In order to use Terraform and `cert-manager` with the Cloudflare DNS challenge y
 4. If everything goes as planned you should see Ansible running the k3s install Playbook against your nodes.
 
 5. Verify the nodes are online
-   
+
+
+:pin: For easier usage copy the kubeconfig into your profile folder
+```` sh
+cp provision/kubeconfig ~/.kube/config
+cp ./provision/kubeconfig /mnt/c/Users/alexa/.kube/config
+````
+
 ```sh
 kubectl --kubeconfig=./provision/kubeconfig get nodes
 # NAME           STATUS   ROLES                       AGE     VERSION
@@ -278,11 +285,6 @@ kc apply -f flux_github_cred.yaml
 ````
 :tada: **Congratulations** you have a Kubernetes cluster managed by Flux, your Git repository is driving the state of your cluster.
 
-:pin: For easier usage copy the kubeconfig into your profile folder
-```` sh
-cp provision/kubeconfig ~/.kube/config
-cp ./provision/kubeconfig /mnt/c/Users/alexa/.kube/config
-````
 
 ### :cloud:&nbsp; Configure Cloudflare DNS with Terraform
 
