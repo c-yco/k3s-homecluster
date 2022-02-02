@@ -213,8 +213,7 @@ spec:
                   storage: 10Gi
         thanos:
           image:
-            registry: quay.io
-            repository: thanos/thanos
+            registry: quay.io/thanos/thanos
             tag: main-2021-12-22-53ec210d
           version: v0.22.0
           objectStorageConfig:
