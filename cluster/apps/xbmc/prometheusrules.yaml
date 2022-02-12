@@ -1,0 +1,24 @@
+---
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  labels:
+    prometheus: k8s
+    role: alert-rules
+  name: xbmc-rules
+  namespace: xbmc
+spec:
+  groups:
+    - name: xbmc.rules
+      rules:
+        - alert: XBMC offline
+          annotations:
+            summary: XBMC {{$labels.instance}} is not reachable
+          expr: |
+            (
+            up{instance="192.168.1.12:9100", job="node-exporter"} != 1
+            )
+          for: 1m
+          labels:
+            severity: critical
+
