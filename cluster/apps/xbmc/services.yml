@@ -15,7 +15,7 @@ spec:
 kind: "Endpoints"
 apiVersion: "v1"
 metadata:
-  name: "mysql"
+  name: "portainer"
 subsets:
   -
     addresses:
