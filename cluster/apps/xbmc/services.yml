@@ -3,6 +3,7 @@ kind: "Service"
 apiVersion: "v1"
 metadata:
   name: "portainer"
+  namespace: "xbmc"
 spec:
   ports:
     -
@@ -16,6 +17,7 @@ kind: "Endpoints"
 apiVersion: "v1"
 metadata:
   name: "portainer"
+  namespace: "xbmc"
 subsets:
   -
     addresses:
