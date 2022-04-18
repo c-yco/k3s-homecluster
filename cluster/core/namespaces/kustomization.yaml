@@ -7,3 +7,4 @@ resources:
   - rook-ceph.yaml
   - monitoring.yaml
   - xbmc.yaml
+  - benji.yaml

@@ -1,0 +1,97 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: benji
+  namespace: benji
+spec:
+  releaseName: benji
+  chart:
+    spec:
+      chart: ./charts/benji-k8s
+      sourceRef:
+        kind: GitRepository
+        name: benji-k8s
+        namespace: flux-system
+  interval: 1h0m0s
+  install:
+    remediation:
+      retries: 5
+  # Default Values https://github.com/elemental-lf/benji/blob/master/charts/benji-k8s/values.yaml
+  values:
+    timeZone: Europe/Berlin
+    benji:
+      image:
+        registry: ghcr.io
+        repository: elemental-lf/benji-k8s
+        tag: 0.15.0
+        pullPolicy: IfNotPresent
+      configuration:
+        configurationVersion: '1'
+        storages:
+          - name: storage-1
+            storageId: 1
+            module: file
+            configuration:
+              path: /backup-nfs
+        ios:
+          - module: rbdaio
+            name: kube-pool
+            configuration:
+              cephConfigFile: /etc/ceph/ceph.conf
+              clientIdentifier: admin
+              simultaneousReads: 3
+              simultaneousWrites: 3
+              newImageFeatures:
+                - RBD_FEATURE_LAYERING
+                - RBD_FEATURE_EXCLUSIVE_LOCK
+                - RBD_FEATURE_STRIPINGV2
+                - RBD_FEATURE_OBJECT_MAP
+                - RBD_FEATURE_FAST_DIFF
+                - RBD_FEATURE_DEEP_FLATTEN
+      volumes:
+        - name: k8s-backup
+          persistentVolumeClaim:
+            claimName: k8s-nfs-backup-pvc
+        - name: ceph-config
+          configMap:
+            name: ceph-config
+            defaultMode: 0444
+        - name: ceph-keyring
+          secret:
+            secretName: ceph-keyring
+            defaultMode: 0444
+      volumeMounts:
+        - name: k8s-backup
+          mountPath: /backup-nfs
+        - name: ceph-config
+          mountPath: /etc/ceph/ceph.conf
+          subPath: ceph.conf
+          readOnly: true
+        - name: ceph-keyring
+          mountPath: /etc/ceph/keyring
+          subPath: keyring
+          readOnly: true
+    postgresql:
+      enabled: false
+      # postgresqlUsername: benji
+      # postgresqlDatabase: benji
+    pushgateway:
+      serviceMonitor:
+        enabled: true
+        namespace: benji
+      # Save data into the persistent volume to preserve metrics across restarts
+      extraArgs:
+        - --persistence.file=/data/pushgateway.data
+        - --persistence.interval=5m
+      persistentVolume:
+        enabled: true
+  # valuesFrom:
+  #   - kind: Secret
+  #     name: postgresql-secret
+  #     valuesKey: password
+  #     targetPath: postgresql.postgresqlPassword
+  #   - kind: Secret
+  #     name: postgresql-secret
+  #     valuesKey: db-path
+  #     targetPath: benji.configuration.databaseEngine
