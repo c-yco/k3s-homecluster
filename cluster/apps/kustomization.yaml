@@ -8,4 +8,4 @@ resources:
   - rook-ceph
   - monitoring
   - xbmc
-  - benji
+  - benji-backup
