@@ -16,6 +16,10 @@ spec:
         name: rook-ceph-charts
         namespace: flux-system
   values:
+    tolerations:
+      - key: "storage-node"
+        operator: "Exists"
+        effect: "NoSchedule"
     crds:
       enabled: false
     csi:
