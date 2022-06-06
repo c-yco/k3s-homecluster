@@ -22,7 +22,7 @@ spec:
       osd:
         limits:
           #cpu: 100m
-          memory: 512Mi
+          memory: 2G
         requests:
           #cpu: 100m
           memory: 512Mi
@@ -79,9 +79,15 @@ spec:
           #   devices:
           #     - name: "sda"
           - name: "k3s-pi-2"
+            resources:
+              requests:
+                memory: "1G"
             # devices:
             #   - name: "sda3"
           - name: "k3s-pi-3"
+            resources:
+              requests:
+                memory: "1G"
             # devices:
             #   - name: "sda3"
     cephBlockPools:
