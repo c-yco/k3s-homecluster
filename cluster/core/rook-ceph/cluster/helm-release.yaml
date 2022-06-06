@@ -18,6 +18,13 @@ spec:
   dependsOn:
     - name: rook-ceph
   values:
+    resources:
+      limits:
+        #cpu: 100m
+        memory: 2G
+      requests:
+        #cpu: 100m
+        memory: 2G
     tolerations:
       - key: "storage-node"
         operator: "Exists"
