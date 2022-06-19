@@ -52,6 +52,15 @@
     },
   ],
   "packageRules": [
+    // Automerge settings
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "automerge": true
+    },
     // setup datasources
     {
       "matchDatasources": ["helm"],
