@@ -78,25 +78,27 @@ spec:
             access: proxy
             url: http://loki:3100
     notifiers:
-      - name: telegram-channel-1
-        type: telegram
-        uid: notifier1
-        # either
-        org_id: 1
-        # or
-        org_name: Main Org.
-        is_default: true
-        send_reminder: true
-        frequency: 4h
-        disable_resolve_message: false
-        # See `Supported Settings` section for settings supported for each
-        # alert notification type.
-        
-        # Secure settings that will be encrypted in the database (supported since Grafana v7.2). See `Supported Settings` section for secure settings supported for each notifier.
-        secure_settings:
-          bottoken: "${SECRET_TELEGRAM_API_TOKEN}"
-          chatid: "${SECRET_TELEGRAM_CHAT_ID}"
-          
+      notifiers.yaml:
+        notifiers:
+        - name: telegram-channel-1
+          type: telegram
+          uid: notifier1
+          # either
+          org_id: 1
+          # or
+          org_name: Main Org.
+          is_default: true
+          send_reminder: true
+          frequency: 4h
+          disable_resolve_message: false
+          # See `Supported Settings` section for settings supported for each
+          # alert notification type.
+
+          # Secure settings that will be encrypted in the database (supported since Grafana v7.2). See `Supported Settings` section for secure settings supported for each notifier.
+          secure_settings:
+            bottoken: "${SECRET_TELEGRAM_API_TOKEN}"
+            chatid: "${SECRET_TELEGRAM_CHAT_ID}"
+
     dashboards:
       default:
         # Ref: https://grafana.com/grafana/dashboards/7845
