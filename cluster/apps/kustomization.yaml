@@ -6,6 +6,6 @@ resources:
   - networking
   - system-upgrade
   - rook-ceph
-  #- monitoring
+  - monitoring
   - xbmc
   - benji-backup
