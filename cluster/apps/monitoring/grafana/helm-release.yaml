@@ -78,19 +78,16 @@ spec:
             access: proxy
             url: http://loki:3100
     notifiers:
+      notifiers.yaml:
       - name: telegram-channel-1
         type: telegram
         uid: notifier1
-        # either
         org_id: 1
-        # or
+
         is_default: true
         send_reminder: true
         frequency: 4h
         disable_resolve_message: false
-        # See `Supported Settings` section for settings supported for each
-        # alert notification type.
-        
         settings:
           chatid: "${SECRET_TELEGRAM_CHAT_ID}"
         # Secure settings that will be encrypted in the database (supported since Grafana v7.2). See `Supported Settings` section for secure settings supported for each notifier.
